@@ -1,4 +1,4 @@
-console.log("start")
++>console.log("start")
 
 let capture=false;  //false: b>f>c   true: c>f>b
 
@@ -64,6 +64,8 @@ my_input.addEventListener('input',validate,capture)
 my_input.addEventListener('click',dis_sub,capture)
 
 my_button.addEventListener("click",submit_level,capture)
-my_form.addEventListener("click", form_level,capture)
+my_form.addEventListener("click", e=>{ if(e.target.matches("button")){
+    form_level()
+}},capture)
 my_container.addEventListener("customEvent", cont_level,capture)
 
